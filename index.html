@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Google Sheets Mastery - 5 Hour Course</title>
   <style>
-    * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; cursor: none;}
+    * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif;}
     body {
       color: #1b5e20;
       overflow-x: hidden;
@@ -13,7 +13,7 @@
       background: #f1f8e9;
     }
 
-    /* Animated Full Background with Smooth Bar Graph Effect */
+    /* Animated Bar Graph Background */
     body::before {
       content: '';
       position: fixed;
@@ -21,75 +21,23 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: repeating-linear-gradient(90deg, rgba(67,160,71,0.08) 0%, rgba(67,160,71,0.08) 2%, transparent 2%, transparent 6%),
-                  repeating-linear-gradient(0deg, rgba(102,187,106,0.08) 0%, rgba(102,187,106,0.08) 1%, transparent 1%, transparent 5%);
-      animation: moveBars 15s ease-in-out infinite;
+      background: repeating-linear-gradient(90deg, rgba(67,160,71,0.1) 0%, rgba(67,160,71,0.1) 2%, transparent 2%, transparent 6%),
+                  repeating-linear-gradient(0deg, rgba(102,187,106,0.1) 0%, rgba(102,187,106,0.1) 1%, transparent 1%, transparent 5%);
+      animation: moveBars 12s linear infinite;
       z-index: -1;
     }
 
     @keyframes moveBars {
       0% { background-position: 0 0, 0 0; }
-      50% { background-position: 200px 300px, 100px 150px; }
+      50% { background-position: 100px 200px, 50px 100px; }
       100% { background-position: 0 0, 0 0; }
     }
 
-    /* Custom Animated Cursor */
-    .cursor {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 25px;
-      height: 25px;
-      background: rgba(76,175,80,0.8);
-      border-radius: 50%;
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      transition: transform 0.1s ease-out, width 0.2s ease, height 0.2s ease, background 0.3s ease;
-      z-index: 1000;
-    }
-
-    a:hover ~ .cursor, button:hover ~ .cursor {
-      width: 40px;
-      height: 40px;
-      background: rgba(46,125,50,0.9);
-    }
-
-    .poster-header {
-      width: 100%;
-      height: 800px;
-      background: url('https://github.com/APTTrialweb/GoogleSheetsCourse/blob/main/WhatsApp%20Image%202025-11-12%20at%2016.05.35_8e1d37db.jpg?raw=true') center/cover no-repeat;
-      border-radius: 0 0 30px 30px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .poster-header::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.3);
-    }
-
-    .poster-header h1 {
-      position: relative;
-      color: white;
-      font-size: 2.5rem;
-      z-index: 2;
-      text-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    }
-
-    header {text-align: center; padding: 40px 15px 20px; animation: fadeIn 1.5s ease;}
-    header h2 {font-size: 2rem; color: #2e7d32;}
+    header {text-align: center; padding: 60px 15px 30px; animation: fadeIn 1.5s ease;}
+    header h1 {font-size: 2.5rem; color: #2e7d32;}
     header p {font-size: 1rem; color: #33691e; margin-top: 10px;}
 
-    .video-info-section {background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); padding: 60px 15px; border-radius: 20px; margin: 40px auto; max-width: 1000px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 40px; position: relative; z-index: 1;}
+    .video-info-section {background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); padding: 60px 15px; border-radius: 20px; margin: 40px auto; max-width: 1000px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 40px;}
 
     @media (min-width: 900px) {
       .video-info-section {flex-direction: row; align-items: center; justify-content: space-between;}
@@ -102,7 +50,7 @@
     .info-right h2 {font-size: 1.8rem; margin-bottom: 15px; color: #1b5e20;}
     .info-right ul {list-style: disc; margin-left: 20px; color: #33691e; font-size: 1rem; line-height: 1.8;}
 
-    section {padding: 60px 15px; text-align: center; position: relative; z-index: 1;}
+    section {padding: 60px 15px; text-align: center;}
     .section-title {font-size: 1.8rem; margin-bottom: 30px; color: #1b5e20; position: relative;}
     .section-title::after {content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background: #66bb6a; border-radius: 3px;}
 
@@ -113,7 +61,7 @@
     .feature h3 {color: #2e7d32; margin-bottom: 10px; font-size: 1.1rem;}
     .feature p {font-size: 0.9rem;}
 
-    .feedback-section {background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(10px); padding: 60px 15px; border-radius: 20px; margin: 40px auto; max-width: 900px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative; z-index: 1;}
+    .feedback-section {background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(10px); padding: 60px 15px; border-radius: 20px; margin: 40px auto; max-width: 900px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative;}
     .feedback-container {display: flex; justify-content: center; align-items: center; overflow: hidden; position: relative; min-height: 240px;}
     .feedback-slide {min-width: 100%; opacity: 0; transition: all 1s ease; position: absolute; left: 0; top: 0; padding: 0 10px;}
     .feedback-slide.active {opacity: 1; position: relative;}
@@ -122,7 +70,7 @@
     .feedback-content p {font-size: 1rem; font-style: italic; color: #33691e; margin-bottom: 10px; max-width: 500px;}
     .feedback-content h4 {color: #2e7d32; font-weight: 600; font-size: 1rem;}
 
-    .enroll {background: linear-gradient(90deg, #43A047, #66BB6A); color: white; padding: 50px 15px; border-radius: 20px; max-width: 900px; margin: 60px auto; box-shadow: 0 10px 25px rgba(102,187,106,0.5); opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; position: relative; overflow: hidden; z-index: 1;}
+    .enroll {background: linear-gradient(90deg, #43A047, #66BB6A); color: white; padding: 50px 15px; border-radius: 20px; max-width: 900px; margin: 60px auto; box-shadow: 0 10px 25px rgba(102,187,106,0.5); opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; position: relative; overflow: hidden;}
     .enroll::before {content: ''; position: absolute; top: 0; left: -75%; width: 50%; height: 100%; background: rgba(255,255,255,0.2); transform: skewX(-25deg); animation: shine 4s infinite;}
     @keyframes shine {0% { left: -75%; } 50% { left: 125%; } 100% { left: 125%; }}
     .enroll.visible {opacity: 1; transform: translateY(0);}
@@ -134,12 +82,8 @@
   </style>
 </head>
 <body>
-  <div class="poster-header">
-    <h1>Your Poster Header Here</h1>
-  </div>
-
   <header>
-    <h2>Google Sheets Mastery Course</h2>
+    <h1>Google Sheets Mastery Course</h1>
     <p>Master Google Sheets in Just 5 Hours with Hands-on Learning</p>
   </header>
 
@@ -209,8 +153,6 @@
     <button style="margin-top:20px;">Enroll Now</button>
   </section>
 
-  <div class="cursor"></div>
-
   <script>
     const observer = new IntersectionObserver(entries => {entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });}, { threshold: 0.2 });
     document.querySelectorAll('.feature, .enroll, .feedback-section').forEach(el => observer.observe(el));
@@ -222,11 +164,6 @@
       current = (current + 1) % slides.length;
       slides[current].classList.add('active');
     }, 4000);
-
-    const cursor = document.querySelector('.cursor');
-    document.addEventListener('mousemove', e => {
-      cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-    });
   </script>
 </body>
 </html>
